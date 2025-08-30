@@ -75,10 +75,10 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
         });
         currentGroupArray = currentGroup.groups;
       });
-      var setCheck = function setCheck(data) {
+      var _setCheck = function setCheck(data) {
         data.forEach(function (element) {
           if (element.groups.length > 0) {
-            setCheck(element.groups);
+            _setCheck(element.groups);
           } else {
             element.data.forEach(function (d) {
               if (d.tableData.checked !== checked) {
@@ -89,7 +89,7 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
           }
         });
       };
-      setCheck([currentGroup]);
+      _setCheck([currentGroup]);
     });
     (0, _defineProperty2["default"])(this, "getOrderByCollection", function () {
       return _this.orderByCollection.filter(function (collection) {
@@ -560,18 +560,18 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
       var rowData = this.findDataByPath(this.sortedData, path);
       rowData.tableData.checked = checked;
       this.selectedCount = this.selectedCount + (checked ? 1 : -1);
-      var checkChildRows = function checkChildRows(rowData) {
+      var _checkChildRows = function checkChildRows(rowData) {
         if (rowData.tableData.childRows) {
           rowData.tableData.childRows.forEach(function (childRow) {
             if (childRow.tableData.checked !== checked) {
               childRow.tableData.checked = checked;
               _this3.selectedCount = _this3.selectedCount + (checked ? 1 : -1);
             }
-            checkChildRows(childRow);
+            _checkChildRows(childRow);
           });
         }
       };
-      checkChildRows(rowData);
+      _checkChildRows(rowData);
       this.filtered = false;
     }
   }, {
@@ -641,10 +641,10 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
         return row.tableData.disabled || selectionResult.disabled ? false : checked;
       };
       if (this.isDataType('group')) {
-        var setCheck = function setCheck(data) {
+        var _setCheck2 = function setCheck(data) {
           data.forEach(function (element) {
             if (element.groups.length > 0) {
-              setCheck(element.groups);
+              _setCheck2(element.groups);
             } else {
               element.data.forEach(function (d) {
                 d.tableData.checked = isChecked(d);
@@ -653,17 +653,17 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
             }
           });
         };
-        setCheck(this.groupedData);
+        _setCheck2(this.groupedData);
       } else {
-        var checkChild = function checkChild(row) {
+        var _checkChild = function checkChild(row) {
           row.tableData.childRows && row.tableData.childRows.forEach(function (child) {
             child.tableData.checked = isChecked(row);
-            checkChild(child);
+            _checkChild(child);
           });
         };
         this.searchedData.forEach(function (row) {
           row.tableData.checked = isChecked(row);
-          checkChild(row);
+          _checkChild(row);
         });
         selectedCount = this.searchedData.length;
       }
@@ -1044,7 +1044,7 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
         // expand the tree for all nodes present after filtering and searching
         this.expandTreeForNodes(this.searchedData);
       }
-      var addRow = function addRow(rowData) {
+      var _addRow = function addRow(rowData) {
         rowData.tableData.markedForTreeRemove = false;
         var parent = _this5.parentFunc(rowData, _this5.data);
         if (parent) {
@@ -1053,7 +1053,7 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
             parent.tableData.childRows.push(rowData);
             _this5.treefiedDataLength++;
           }
-          addRow(parent);
+          _addRow(parent);
           rowData.tableData.path = [].concat((0, _toConsumableArray2["default"])(parent.tableData.path), [rowData.tableData.uuid]);
           _this5.treeDataMaxLevel = Math.max(_this5.treeDataMaxLevel, rowData.tableData.path.length);
         } else {
@@ -1067,7 +1067,7 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
 
       // Add all rows initially
       this.data.forEach(function (rowData) {
-        addRow(rowData);
+        _addRow(rowData);
       });
       var markForTreeRemove = function markForTreeRemove(rowData) {
         var pointer = _this5.treefiedData;
@@ -1083,10 +1083,10 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
         });
         pointer.tableData.markedForTreeRemove = true;
       };
-      var traverseChildrenAndUnmark = function traverseChildrenAndUnmark(rowData) {
+      var _traverseChildrenAndUnmark = function traverseChildrenAndUnmark(rowData) {
         if (rowData.tableData.childRows) {
           rowData.tableData.childRows.forEach(function (row) {
-            traverseChildrenAndUnmark(row);
+            _traverseChildrenAndUnmark(row);
           });
         }
         rowData.tableData.markedForTreeRemove = false;
@@ -1119,19 +1119,19 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
       // preserve all children of nodes that are matched by search or filters
       this.data.forEach(function (rowData) {
         if (_this5.searchedData.indexOf(rowData) > -1) {
-          traverseChildrenAndUnmark(rowData);
+          _traverseChildrenAndUnmark(rowData);
         }
       });
-      var traverseTreeAndDeleteMarked = function traverseTreeAndDeleteMarked(rowDataArray) {
+      var _traverseTreeAndDeleteMarked = function traverseTreeAndDeleteMarked(rowDataArray) {
         for (var i = rowDataArray.length - 1; i >= 0; i--) {
           var item = rowDataArray[i];
           if (item.tableData.childRows) {
-            traverseTreeAndDeleteMarked(item.tableData.childRows);
+            _traverseTreeAndDeleteMarked(item.tableData.childRows);
           }
           if (item.tableData.markedForTreeRemove) rowDataArray.splice(i, 1);
         }
       };
-      traverseTreeAndDeleteMarked(this.treefiedData);
+      _traverseTreeAndDeleteMarked(this.treefiedData);
       this.treefiedDataLength = this.treefiedData.length;
       this.treefied = true;
     }
@@ -1178,14 +1178,14 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
             return result;
           }, {});
         };
-        var sortGroupData = function sortGroupData(list, level) {
+        var _sortGroupData = function sortGroupData(list, level) {
           list.forEach(function (element) {
             if (element.groups.length > 0) {
               var column = groups[level];
               element.groups = sortGroups(element.groups, column);
               // For grouped rows that are nested
               element.groupsIndex = getGroupsIndex(element.groups);
-              sortGroupData(element.groups, level + 1);
+              _sortGroupData(element.groups, level + 1);
             } else {
               if (_this6.maxColumnSort > 0 && _this6.getOrderByCollection().length > 0) {
                 element.data = _this6.sortList(element.data);
@@ -1201,20 +1201,20 @@ var DataManager = exports["default"] = /*#__PURE__*/function () {
             }
           });
         };
-        sortGroupData(this.sortedData, 1);
+        _sortGroupData(this.sortedData, 1);
       } else if (this.isDataType('tree')) {
         this.sortedData = (0, _toConsumableArray2["default"])(this.treefiedData);
         if (this.maxColumnSort > 0 && this.getOrderByCollection().length > 0) {
           this.sortedData = this.sortList(this.sortedData);
-          var sortTree = function sortTree(list) {
+          var _sortTree = function sortTree(list) {
             list.forEach(function (item) {
               if (item.tableData.childRows) {
                 item.tableData.childRows = _this6.sortList(item.tableData.childRows);
-                sortTree(item.tableData.childRows);
+                _sortTree(item.tableData.childRows);
               }
             });
           };
-          sortTree(this.sortedData);
+          _sortTree(this.sortedData);
         }
       } else if (this.isDataType('normal')) {
         this.sortedData = (0, _toConsumableArray2["default"])(this.searchedData);

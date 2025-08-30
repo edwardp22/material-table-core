@@ -125,7 +125,7 @@ function MTableGroupRow(_ref) {
   }
   var freeCells = [];
   for (var i = 0; i < level; i++) {
-    freeCells.push( /*#__PURE__*/_react["default"].createElement(_TableCell["default"], {
+    freeCells.push(/*#__PURE__*/_react["default"].createElement(_TableCell["default"], {
       padding: "checkbox",
       key: i
     }));
@@ -144,7 +144,7 @@ function MTableGroupRow(_ref) {
   }
   var separator = options.groupRowSeparator || ': ';
   var showSelectGroupCheckbox = options.selection && options.showSelectGroupCheckbox;
-  var mapSelectedRows = function mapSelectedRows(groupData) {
+  var _mapSelectedRows3 = function mapSelectedRows(groupData) {
     var totalRows = 0;
     var selectedRows = 0;
     if (showSelectGroupCheckbox) {
@@ -155,7 +155,7 @@ function MTableGroupRow(_ref) {
         });
       } else {
         groupData.groups.forEach(function (group) {
-          var _mapSelectedRows = mapSelectedRows(group),
+          var _mapSelectedRows = _mapSelectedRows3(group),
             _mapSelectedRows2 = (0, _slicedToArray2["default"])(_mapSelectedRows, 2),
             groupTotalRows = _mapSelectedRows2[0],
             groupSelectedRows = _mapSelectedRows2[1];
@@ -166,10 +166,10 @@ function MTableGroupRow(_ref) {
     }
     return [totalRows, selectedRows];
   };
-  var _mapSelectedRows3 = mapSelectedRows(props.groupData),
-    _mapSelectedRows4 = (0, _slicedToArray2["default"])(_mapSelectedRows3, 2),
-    totalRows = _mapSelectedRows4[0],
-    selectedRows = _mapSelectedRows4[1];
+  var _mapSelectedRows4 = _mapSelectedRows3(props.groupData),
+    _mapSelectedRows5 = (0, _slicedToArray2["default"])(_mapSelectedRows4, 2),
+    totalRows = _mapSelectedRows5[0],
+    selectedRows = _mapSelectedRows5[1];
   if (options.showGroupingCount) {
     var _props$groupData$data, _props$groupData$data2;
     value += " (".concat((_props$groupData$data = (_props$groupData$data2 = props.groupData.data) === null || _props$groupData$data2 === void 0 ? void 0 : _props$groupData$data2.length) !== null && _props$groupData$data !== void 0 ? _props$groupData$data : 0, ")");
