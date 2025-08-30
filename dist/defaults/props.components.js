@@ -1,18 +1,16 @@
-'use strict';
+"use strict";
 
-var _interopRequireDefault = require('@babel/runtime/helpers/interopRequireDefault');
-Object.defineProperty(exports, '__esModule', {
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = void 0;
-var _TablePagination2 = _interopRequireDefault(
-  require('@mui/material/TablePagination')
-);
-var _components = require('../components');
+exports["default"] = void 0;
+var _TablePagination2 = _interopRequireDefault(require("@mui/material/TablePagination"));
+var _components = require("../components");
 /**
  * Default data for the `MaterialTable.components` attribute
  */
-var _default = (exports['default'] = {
+var _default = exports["default"] = {
   Action: _components.MTableAction,
   Actions: _components.MTableActions,
   Body: _components.MTableBody,
@@ -27,8 +25,8 @@ var _default = (exports['default'] = {
   Header: _components.MTableHeader,
   OverlayLoading: _components.OverlayLoading,
   OverlayError: _components.OverlayError,
-  Pagination: _TablePagination2['default'],
+  Pagination: _TablePagination2["default"],
   Row: _components.MTableBodyRow,
   SummaryRow: _components.MTableSummaryRow,
   Toolbar: _components.MTableToolbar
-});
+};

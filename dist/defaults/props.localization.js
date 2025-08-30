@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = void 0;
+exports["default"] = void 0;
 /**
  * Default data for the `MaterialTable.localization` attribute
  */
-var _default = (exports['default'] = {
+var _default = exports["default"] = {
   error: 'Data could not be retrieved',
   grouping: {
     groupedBy: 'Grouped By:',
@@ -57,4 +57,4 @@ var _default = (exports['default'] = {
     bulkEditApprove: 'Save all changes',
     bulkEditCancel: 'Discard all changes'
   }
-});
+};

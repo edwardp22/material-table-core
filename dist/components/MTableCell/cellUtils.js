@@ -1,25 +1,22 @@
-'use strict';
+"use strict";
 
-var _interopRequireDefault = require('@babel/runtime/helpers/interopRequireDefault');
-Object.defineProperty(exports, '__esModule', {
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getCurrencyValue = getCurrencyValue;
 exports.getEmptyValue = getEmptyValue;
 exports.getRenderValue = getRenderValue;
 exports.isoDateRegex = void 0;
-var _react = _interopRequireDefault(require('react'));
-var _dateFns = require('date-fns');
+var _react = _interopRequireDefault(require("react"));
+var _dateFns = require("date-fns");
 /* eslint-disable no-useless-escape */
-var isoDateRegex = (exports.isoDateRegex =
-  /^\d{4}-(0[1-9]|1[0-2])-([12]\d|0[1-9]|3[01])([T\s](([01]\d|2[0-3])\:[0-5]\d|24\:00)(\:[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3])\:?([0-5]\d)?)?)?$/);
+var isoDateRegex = exports.isoDateRegex = /^\d{4}-(0[1-9]|1[0-2])-([12]\d|0[1-9]|3[01])([T\s](([01]\d|2[0-3])\:[0-5]\d|24\:00)(\:[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3])\:?([0-5]\d)?)?)?$/;
 /* eslint-enable no-useless-escape */
 
 function getEmptyValue() {
-  var emptyValue =
-    arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  var props =
-    arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var emptyValue = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   if (typeof emptyValue === 'function') {
     return props.columnDef.emptyValue(props.rowData);
   } else {
@@ -28,24 +25,12 @@ function getEmptyValue() {
 }
 function getCurrencyValue(currencySetting, value) {
   if (currencySetting !== undefined) {
-    return new Intl.NumberFormat(
-      currencySetting.locale !== undefined ? currencySetting.locale : 'en-US',
-      {
-        style: 'currency',
-        currency:
-          currencySetting.currencyCode !== undefined
-            ? currencySetting.currencyCode
-            : 'USD',
-        minimumFractionDigits:
-          currencySetting.minimumFractionDigits !== undefined
-            ? currencySetting.minimumFractionDigits
-            : 2,
-        maximumFractionDigits:
-          currencySetting.maximumFractionDigits !== undefined
-            ? currencySetting.maximumFractionDigits
-            : 2
-      }
-    ).format(value !== undefined ? value : 0);
+    return new Intl.NumberFormat(currencySetting.locale !== undefined ? currencySetting.locale : 'en-US', {
+      style: 'currency',
+      currency: currencySetting.currencyCode !== undefined ? currencySetting.currencyCode : 'USD',
+      minimumFractionDigits: currencySetting.minimumFractionDigits !== undefined ? currencySetting.minimumFractionDigits : 2,
+      maximumFractionDigits: currencySetting.maximumFractionDigits !== undefined ? currencySetting.maximumFractionDigits : 2
+    }).format(value !== undefined ? value : 0);
   } else {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -54,21 +39,11 @@ function getCurrencyValue(currencySetting, value) {
   }
 }
 function getRenderValue(props, icons, type) {
-  var dateLocale =
-    props.columnDef.dateSetting && props.columnDef.dateSetting.locale
-      ? props.columnDef.dateSetting.locale
-      : undefined;
-  if (
-    props.columnDef.emptyValue !== undefined &&
-    (props.value === undefined || props.value === null)
-  ) {
+  var dateLocale = props.columnDef.dateSetting && props.columnDef.dateSetting.locale ? props.columnDef.dateSetting.locale : undefined;
+  if (props.columnDef.emptyValue !== undefined && (props.value === undefined || props.value === null)) {
     return getEmptyValue(props.columnDef.emptyValue, props);
   }
-  if (
-    props.rowData === undefined &&
-    props.value &&
-    props.columnDef.groupRender
-  ) {
+  if (props.rowData === undefined && props.value && props.columnDef.groupRender) {
     return props.columnDef.groupRender(props.value);
   } else if (props.columnDef.render && props.rowData) {
     return props.columnDef.render(props.rowData);
@@ -79,16 +54,13 @@ function getRenderValue(props, icons, type) {
       width: 48
     };
     if (props.value) {
-      return /*#__PURE__*/ _react['default'].createElement(icons.Check, {
+      return /*#__PURE__*/_react["default"].createElement(icons.Check, {
         style: style
       });
     } else {
-      return /*#__PURE__*/ _react['default'].createElement(
-        icons.ThirdStateCheck,
-        {
-          style: style
-        }
-      );
+      return /*#__PURE__*/_react["default"].createElement(icons.ThirdStateCheck, {
+        style: style
+      });
     }
   } else if (props.columnDef.type === 'date') {
     if (props.value instanceof Date) {

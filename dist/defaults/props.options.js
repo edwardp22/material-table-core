@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = void 0;
+exports["default"] = void 0;
 /**
  * Default data for `MaterialTable.options` attribute
  */
-var _default = (exports['default'] = {
+var _default = exports["default"] = {
   idSynonym: 'id',
   actionsColumnIndex: 0,
   addRowPosition: 'last',
@@ -66,4 +66,4 @@ var _default = (exports['default'] = {
   numberOfPagesAround: 1,
   actionsHeaderIndex: 0,
   draggable: true
-});
+};
