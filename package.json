@@ -5,7 +5,7 @@
   },
   "url": "https://material-table-core.github.io/",
   "version": "6.4.4",
-  "description": "Datatable for React based on https://material-ui.com/api/table/ with additional features",
+  "description": "Fork of material-table (https://github.com/mbrn/material-table). Datatable for React based on https://material-ui.com/api/table/ with additional features and customizations by edwardp22.",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "files": [
@@ -48,9 +48,12 @@
     "material",
     "mui",
     "datatable",
-    "table"
+    "table",
+    "fork",
+    "material-table",
+    "material-table-core"
   ],
-  "author": "Mehmet Baran, @material-table/core contributors",
+  "author": "edwardp22 (fork maintainer), Mehmet Baran, @material-table/core contributors",
   "license": "MIT",
   "bugs": {
     "url": "https://material-table-core.github.io/"
@@ -127,5 +130,7 @@
     "@mui/system": ">=5.15.5",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
-  }
+  },
+  "originalRepository": "https://github.com/mbrn/material-table",
+  "forkedFrom": "material-table by mbrn"
 }
