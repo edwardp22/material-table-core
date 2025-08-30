@@ -81,7 +81,7 @@ function MTableFilterRow(_ref) {
   }
   if (hasActions) {
     if (options.actionsColumnIndex === -1) {
-      columns.push( /*#__PURE__*/_react["default"].createElement(_TableCell2["default"], {
+      columns.push(/*#__PURE__*/_react["default"].createElement(_TableCell2["default"], {
         key: "key-action-column"
       }));
     } else {

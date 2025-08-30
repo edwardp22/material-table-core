@@ -16,8 +16,7 @@ var _react = _interopRequireDefault(require("react"));
 var _styles = require("@mui/material/styles");
 var CommonValues = _interopRequireWildcard(require("../../utils/common-values"));
 var _store = require("../../store");
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function MTablePaginationInner(props) {
   var theme = (0, _styles.useTheme)();
   var localization = (0, _store.useLocalizationStore)().pagination;
@@ -46,7 +45,7 @@ function MTablePaginationInner(props) {
     numberOfPagesAround = Math.max(1, Math.min(10, numberOfPagesAround));
     for (var p = Math.max(start - numberOfPagesAround + 1, 0); p <= Math.min(end + numberOfPagesAround - 1, maxPages); p++) {
       var buttonVariant = p === props.page ? 'contained' : 'text';
-      buttons.push( /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+      buttons.push(/*#__PURE__*/_react["default"].createElement(_Button["default"], {
         size: "small",
         style: {
           boxShadow: 'none',
