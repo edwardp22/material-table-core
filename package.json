@@ -4,7 +4,7 @@
     "access": "public"
   },
   "url": "https://material-table-core.github.io/",
-  "version": "6.4.6",
+  "version": "6.4.7",
   "description": "Fork of material-table (https://github.com/mbrn/material-table). Datatable for React based on https://material-ui.com/api/table/ with additional features and customizations by edwardp22.",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -118,7 +118,7 @@
     "@mui/material": ">=5.11.12",
     "@mui/x-date-pickers": "^6.19.0",
     "classnames": "^2.3.2",
-    "date-fns": "^3.2.0",
+    "date-fns": "^4.1.0",
     "debounce": "^1.2.1",
     "deep-eql": "^4.1.1",
     "deepmerge": "^4.2.2",
