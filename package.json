@@ -1,10 +1,10 @@
 {
-  "name": "@material-table/core",
+  "name": "@edwardp22/material-table-core",
   "publishConfig": {
     "access": "public"
   },
   "url": "https://material-table-core.github.io/",
-  "version": "6.4.4",
+  "version": "6.4.6",
   "description": "Fork of material-table (https://github.com/mbrn/material-table). Datatable for React based on https://material-ui.com/api/table/ with additional features and customizations by edwardp22.",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
