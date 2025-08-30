@@ -1,4 +1,4 @@
-import formatDate from 'date-fns/format';
+import { formatDate } from 'date-fns';
 import { v4 as uuidv4 } from 'uuid';
 import { selectFromObject } from './';
 import { widthToNumber } from './common-values';
@@ -1233,7 +1233,7 @@ export default class DataManager {
         !this.columns.some((columnDef) => columnDef.tableData.filterValue)
       ) {
         if (rowData.tableData.isTreeExpanded === undefined) {
-          let isExpanded = false;
+          let isDefaultExpanded = false;
           switch (typeof this.defaultExpanded) {
             case 'boolean':
               isDefaultExpanded = this.defaultExpanded;
@@ -1242,7 +1242,7 @@ export default class DataManager {
               isDefaultExpanded = this.defaultExpanded(rowData);
               break;
           }
-          rowData.tableData.isTreeExpanded = isExpanded;
+          rowData.tableData.isTreeExpanded = isDefaultExpanded;
         }
       }
       const hasSearchMatchedChildren = rowData.tableData.isTreeExpanded;
