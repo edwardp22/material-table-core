@@ -1,17 +1,19 @@
 import React from 'react';
-import DateFnsUtils from '@date-io/date-fns';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
+import TextField from '@mui/material/TextField';
 
 function TimeField({ forwardedRef, ...props }) {
   return (
-    <LocalizationProvider dateAdapter={DateFnsUtils} locale={props.locale}>
+    <LocalizationProvider dateAdapter={AdapterDateFns} locale={props.locale}>
       <TimePicker
         {...props}
         ref={forwardedRef}
         format="HH:mm:ss"
         value={props.value || null}
         onChange={props.onChange}
-        clearable
+        clearable={{ clearable: true }}
+        renderInput={(params) => <TextField {...params} />}
         InputProps={{
           style: {
             fontSize: 13
