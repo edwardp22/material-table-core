@@ -45,7 +45,7 @@ function DateField({
               style: { fontSize: 13 }
             },
             inputProps: {
-              'aria-label': `${props.columnDef.title}: press space to edit`,
+              'aria-label': `${columnDef.title}: press space to edit`,
             }
           }
         }}
