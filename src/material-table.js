@@ -15,7 +15,7 @@ import {
   MTableSteppedPagination,
   MTableScrollbar
 } from '@components';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash.debounce';
 
 export default class MaterialTable extends React.Component {
   dataManager = new DataManager();
