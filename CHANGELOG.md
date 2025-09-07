@@ -14,6 +14,13 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [6.5.0](https://github.com/edwardp22/material-table-core/compare/v6.4.10...v6.5.0) (2025-09-07)
+
+
+### Features
+
+* add release please and husky ([de99b18](https://github.com/edwardp22/material-table-core/commit/de99b18a819be3af4671433439f760ee8fbfeb1d))
+
 ### 6.4.0 (2024-03-28)
 
 ##### Other Changes
