@@ -14,6 +14,13 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [6.5.1](https://github.com/edwardp22/material-table-core/compare/v6.5.0...v6.5.1) (2025-09-07)
+
+
+### Bug Fixes
+
+* upgrade minor packages ([#4](https://github.com/edwardp22/material-table-core/issues/4)) ([d19991a](https://github.com/edwardp22/material-table-core/commit/d19991ac4b8869c32087a8169c3b877515e36e0f))
+
 ## [6.5.0](https://github.com/edwardp22/material-table-core/compare/v6.4.10...v6.5.0) (2025-09-07)
 
 
