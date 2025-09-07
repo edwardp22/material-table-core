@@ -22,7 +22,7 @@ function DateFilter({
     value: columnDef.tableData.filterValue || null,
     onChange: onDateInputChange,
     placeholder: getLocalizedFilterPlaceHolder(columnDef, localization),
-    clearable: true
+    slotProps: { actionBar: { actions: ['clear'] } }
   };
   let dateInputElement = null;
   if (columnDef.type === 'date') {

@@ -39,7 +39,7 @@ function DateField({
         format={dateFormat}
         value={value || null}
         onChange={onChange}
-        clearable
+        slotProps={{ actionBar: { actions: ['clear'] } }}
         InputProps={{
           style: {
             fontSize: 13

@@ -107,7 +107,7 @@ class MTableEditField extends React.Component {
           format={dateFormat}
           value={this.props.value || null}
           onChange={this.props.onChange}
-          clearable
+          slotProps={{ actionBar: { actions: ['clear'] } }}
           InputProps={{
             style: {
               fontSize: 13
@@ -134,7 +134,7 @@ class MTableEditField extends React.Component {
           format="HH:mm:ss"
           value={this.props.value || null}
           onChange={this.props.onChange}
-          clearable
+          slotProps={{ actionBar: { actions: ['clear'] } }}
           InputProps={{
             style: {
               fontSize: 13
@@ -161,7 +161,7 @@ class MTableEditField extends React.Component {
           format="dd.MM.yyyy HH:mm:ss"
           value={this.props.value || null}
           onChange={this.props.onChange}
-          clearable
+          slotProps={{ actionBar: { actions: ['clear'] } }}
           InputProps={{
             style: {
               fontSize: 13
