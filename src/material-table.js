@@ -1,5 +1,4 @@
 import React from 'react';
-import { debounce } from 'debounce';
 import deepEql from 'deep-eql';
 import * as CommonValues from './utils/common-values';
 import {
@@ -16,6 +15,7 @@ import {
   MTableSteppedPagination,
   MTableScrollbar
 } from '@components';
+import debounce from 'lodash/debounce';
 
 export default class MaterialTable extends React.Component {
   dataManager = new DataManager();
@@ -409,7 +409,7 @@ export default class MaterialTable extends React.Component {
         calculatedProps.actions.push({
           icon: undefined,
           position: 'row',
-          onClick: () => {},
+          onClick: () => { },
           disabled: true
         });
       }
@@ -743,8 +743,8 @@ export default class MaterialTable extends React.Component {
               typeof error === 'object'
                 ? error.message
                 : error !== undefined
-                ? error
-                : this.props.localization.error,
+                  ? error
+                  : this.props.localization.error,
             errorCause: 'query'
           };
           this.setState({
@@ -905,9 +905,9 @@ export default class MaterialTable extends React.Component {
     if (props.options.paging) {
       const currentPage = this.isRemoteData()
         ? Math.min(
-            props.page,
-            Math.floor(props.totalCount / this.state.pageSize)
-          )
+          props.page,
+          Math.floor(props.totalCount / this.state.pageSize)
+        )
         : this.state.currentPage;
       const totalCount = this.isRemoteData()
         ? props.totalCount
@@ -984,7 +984,7 @@ export default class MaterialTable extends React.Component {
         }),
         tableLayout:
           props.options.fixedColumns &&
-          (props.options.fixedColumns.left || props.options.fixedColumns.right)
+            (props.options.fixedColumns.left || props.options.fixedColumns.right)
             ? 'fixed'
             : props.options.tableLayout
       }}
@@ -998,8 +998,8 @@ export default class MaterialTable extends React.Component {
             props.parentChildData
               ? this.dataManager.searchedData.length
               : this.state.columns.some((col) => col.tableData.groupOrder > -1)
-              ? this.state.groupedDataLength
-              : this.state.data.length
+                ? this.state.groupedDataLength
+                : this.state.data.length
           }
           hasDetailPanel={!!props.detailPanel}
           showActionsColumn={
@@ -1135,7 +1135,7 @@ export default class MaterialTable extends React.Component {
           style={{ position: 'relative', ...props.style }}
         >
           {props.options.paginationPosition === 'top' ||
-          props.options.paginationPosition === 'both'
+            props.options.paginationPosition === 'both'
             ? this.renderFooter()
             : null}
           {props.options.toolbar && (
@@ -1185,8 +1185,8 @@ export default class MaterialTable extends React.Component {
                       }}
                     >
                       {this.state.width &&
-                      props.options.fixedColumns &&
-                      props.options.fixedColumns.right ? (
+                        props.options.fixedColumns &&
+                        props.options.fixedColumns.right ? (
                         <div
                           style={{
                             width: this.getColumnsWidth(
@@ -1219,8 +1219,8 @@ export default class MaterialTable extends React.Component {
                       <div>{table}</div>
 
                       {this.state.width &&
-                      props.options.fixedColumns &&
-                      props.options.fixedColumns.left ? (
+                        props.options.fixedColumns &&
+                        props.options.fixedColumns.left ? (
                         <div
                           style={{
                             width: this.getColumnsWidth(
@@ -1274,7 +1274,7 @@ export default class MaterialTable extends React.Component {
               </div>
             )}
           {props.options.paginationPosition === 'bottom' ||
-          props.options.paginationPosition === 'both'
+            props.options.paginationPosition === 'both'
             ? this.renderFooter()
             : null}
 
