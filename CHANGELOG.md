@@ -14,6 +14,13 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [6.5.3](https://github.com/edwardp22/material-table-core/compare/v6.5.2...v6.5.3) (2025-09-07)
+
+
+### Bug Fixes
+
+* using lodash ([#8](https://github.com/edwardp22/material-table-core/issues/8)) ([b128c94](https://github.com/edwardp22/material-table-core/commit/b128c94b0521438c7a8b664d49575c95e35f60c0))
+
 ## [6.5.2](https://github.com/edwardp22/material-table-core/compare/v6.5.1...v6.5.2) (2025-09-07)
 
 
