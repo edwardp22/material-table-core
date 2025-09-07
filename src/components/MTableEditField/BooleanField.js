@@ -28,6 +28,11 @@ function BooleanField({ forwardedRef, ...props }) {
                 width: 24,
                 marginLeft: 9
               }}
+              slotProps={{
+                input: {
+                  'aria-label': props.columnDef.title
+                }
+              }}
             />
           }
         />
