@@ -194,19 +194,21 @@ class MTableEditField extends React.Component {
               : event.target.value
           )
         }
-        InputProps={{
-          style: {
-            minWidth: 50,
-            fontSize: 13
+        slotProps={{
+          input: {
+            style: {
+              minWidth: 50,
+              fontSize: 13
+            }
+          },
+          htmlInput: {
+            autoFocus: this.props.autoFocus,
+            'aria-label': this.props.columnDef.title,
+            style:
+              this.props.columnDef.type === 'numeric'
+                ? { textAlign: 'right' }
+                : {}
           }
-        }}
-        inputProps={{
-          autoFocus: this.props.autoFocus,
-          'aria-label': this.props.columnDef.title,
-          style:
-            this.props.columnDef.type === 'numeric'
-              ? { textAlign: 'right' }
-              : {}
         }}
       />
     );
@@ -229,16 +231,18 @@ class MTableEditField extends React.Component {
           }
           return this.props.onChange(value);
         }}
-        InputProps={{
-          style: {
-            fontSize: 13,
-            textAlign: 'right'
+        slotProps={{
+          input: {
+            style: {
+              fontSize: 13,
+              textAlign: 'right'
+            }
+          },
+          htmlInput: {
+            autoFocus: this.props.autoFocus,
+            'aria-label': this.props.columnDef.title,
+            style: { textAlign: 'right' }
           }
-        }}
-        inputProps={{
-          autoFocus: this.props.autoFocus,
-          'aria-label': this.props.columnDef.title,
-          style: { textAlign: 'right' }
         }}
         onKeyDown={this.props.onKeyDown}
       />
