@@ -14,6 +14,18 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [7.0.0](https://github.com/edwardp22/material-table-core/compare/v6.5.4...v7.0.0) (2025-09-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to react 19
+
+### Features
+
+* upgrade to react v19 ([57b20be](https://github.com/edwardp22/material-table-core/commit/57b20be275dd4543296b7a62e2b826e5821f2b91))
+* upgrade to react v19 ([#12](https://github.com/edwardp22/material-table-core/issues/12)) ([4e57d14](https://github.com/edwardp22/material-table-core/commit/4e57d146f8c84f036f4250a87ad40226a61e9636))
+
 ## [6.5.4](https://github.com/edwardp22/material-table-core/compare/v6.5.3...v6.5.4) (2025-09-07)
 
 
