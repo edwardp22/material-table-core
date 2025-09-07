@@ -4,7 +4,7 @@
     "access": "public"
   },
   "url": "https://material-table-core.github.io/",
-  "version": "6.5.3",
+  "version": "6.5.4",
   "description": "Fork of material-table (https://github.com/mbrn/material-table). Datatable for React based on https://material-ui.com/api/table/ with additional features and customizations by edwardp22.",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
