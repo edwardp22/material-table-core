@@ -14,6 +14,13 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [6.5.2](https://github.com/edwardp22/material-table-core/compare/v6.5.1...v6.5.2) (2025-09-07)
+
+
+### Bug Fixes
+
+* replace date io with mui functions ([#6](https://github.com/edwardp22/material-table-core/issues/6)) ([02b795b](https://github.com/edwardp22/material-table-core/commit/02b795b645663f2e1e9de6944d77a5c82b40fc6f))
+
 ## [6.5.1](https://github.com/edwardp22/material-table-core/compare/v6.5.0...v6.5.1) (2025-09-07)
 
 
