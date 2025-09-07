@@ -14,6 +14,13 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [7.0.1](https://github.com/edwardp22/material-table-core/compare/v7.0.0...v7.0.1) (2025-09-07)
+
+
+### Miscellaneous
+
+* adding dependabot ([61e8b44](https://github.com/edwardp22/material-table-core/commit/61e8b444bf97744b8eb3a9a7f71e38145ef985e1))
+
 ## [7.0.0](https://github.com/edwardp22/material-table-core/compare/v6.5.4...v7.0.0) (2025-09-07)
 
 
