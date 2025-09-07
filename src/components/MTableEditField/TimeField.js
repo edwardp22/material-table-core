@@ -12,7 +12,7 @@ function TimeField({ forwardedRef, ...props }) {
         format="HH:mm:ss"
         value={props.value || null}
         onChange={props.onChange}
-        clearable={{ clearable: true }}
+        clearable
         renderInput={(params) => <TextField {...params} />}
         InputProps={{
           style: {
