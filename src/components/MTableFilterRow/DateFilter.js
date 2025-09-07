@@ -1,6 +1,5 @@
 import React from 'react';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import TextField from '@mui/material/TextField';
 import { getLocalizedFilterPlaceHolder } from './utils';
 import {
   DatePicker,
@@ -30,7 +29,6 @@ function DateFilter({
       <DatePicker
         {...pickerProps}
         ref={forwardedRef}
-        renderInput={(params) => <TextField {...params} />}
       />
     );
   } else if (columnDef.type === 'datetime') {
@@ -38,7 +36,6 @@ function DateFilter({
       <DateTimePicker
         {...pickerProps}
         ref={forwardedRef}
-        renderInput={(params) => <TextField {...params} />}
       />
     );
   } else if (columnDef.type === 'time') {
@@ -46,7 +43,6 @@ function DateFilter({
       <TimePicker
         {...pickerProps}
         ref={forwardedRef}
-        renderInput={(params) => <TextField {...params} />}
       />
     );
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
-import TextField from '@mui/material/TextField';
 
 function TimeField({ forwardedRef, ...props }) {
   return (
@@ -12,15 +11,18 @@ function TimeField({ forwardedRef, ...props }) {
         format="HH:mm:ss"
         value={props.value || null}
         onChange={props.onChange}
-        slotProps={{ actionBar: { actions: ['clear'] } }}
-        renderInput={(params) => <TextField {...params} />}
-        InputProps={{
-          style: {
-            fontSize: 13
+        slotProps={{
+          textField: {
+            InputProps: {
+              style: { fontSize: 13 }
+            },
+            inputProps: {
+              'aria-label': `${props.columnDef.title}: press space to edit`,
+            }
+          },
+          actionBar: {
+            actions: ['clear']
           }
-        }}
-        inputProps={{
-          'aria-label': `${props.columnDef.title}: press space to edit`
         }}
       />
     </LocalizationProvider>

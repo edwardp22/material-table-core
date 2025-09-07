@@ -103,19 +103,19 @@ class MTableEditField extends React.Component {
       >
         <DatePicker
           {...this.getProps()}
-          renderInput={(props) => <TextField {...props} />}
           format={dateFormat}
           value={this.props.value || null}
           onChange={this.props.onChange}
-          slotProps={{ actionBar: { actions: ['clear'] } }}
-          InputProps={{
-            style: {
-              fontSize: 13
-            }
-          }}
-          inputProps={{
-            autoFocus: this.props.autoFocus,
-            'aria-label': `${this.props.columnDef.title}: press space to edit`
+          slotProps={{
+            actionBar: { actions: ['clear'] },
+            textField: {
+              InputProps: {
+                style: { fontSize: 13 }
+              },
+              inputProps: {
+                'aria-label': `${props.columnDef.title}: press space to edit`,
+              }
+            },
           }}
         />
       </LocalizationProvider>
@@ -130,19 +130,19 @@ class MTableEditField extends React.Component {
       >
         <TimePicker
           {...this.getProps()}
-          renderInput={(props) => <TextField {...props} />}
           format="HH:mm:ss"
           value={this.props.value || null}
           onChange={this.props.onChange}
-          slotProps={{ actionBar: { actions: ['clear'] } }}
-          InputProps={{
-            style: {
-              fontSize: 13
-            }
-          }}
-          inputProps={{
-            autoFocus: this.props.autoFocus,
-            'aria-label': `${this.props.columnDef.title}: press space to edit`
+          slotProps={{
+            actionBar: { actions: ['clear'] },
+            textField: {
+              InputProps: {
+                style: { fontSize: 13 }
+              },
+              inputProps: {
+                'aria-label': `${props.columnDef.title}: press space to edit`,
+              }
+            },
           }}
         />
       </LocalizationProvider>
@@ -157,19 +157,19 @@ class MTableEditField extends React.Component {
       >
         <DateTimePicker
           {...this.getProps()}
-          renderInput={(props) => <TextField {...props} />}
           format="dd.MM.yyyy HH:mm:ss"
           value={this.props.value || null}
           onChange={this.props.onChange}
-          slotProps={{ actionBar: { actions: ['clear'] } }}
-          InputProps={{
-            style: {
-              fontSize: 13
-            }
-          }}
-          inputProps={{
-            autoFocus: this.props.autoFocus,
-            'aria-label': `${this.props.columnDef.title}: press space to edit`
+          slotProps={{
+            actionBar: { actions: ['clear'] },
+            textField: {
+              InputProps: {
+                style: { fontSize: 13 }
+              },
+              inputProps: {
+                'aria-label': `${props.columnDef.title}: press space to edit`,
+              }
+            },
           }}
         />
       </LocalizationProvider>
