@@ -77,9 +77,11 @@ class MTableEditField extends React.Component {
                   width: 24,
                   marginLeft: 9
                 }}
-                inputProps={{
-                  autoFocus: this.props.autoFocus,
-                  'aria-label': this.props.columnDef.title
+                slotProps={{
+                  input: {
+                    autoFocus: this.props.autoFocus,
+                    'aria-label': this.props.columnDef.title
+                  }
                 }}
               />
             }
@@ -113,6 +115,7 @@ class MTableEditField extends React.Component {
                 style: { fontSize: 13 }
               },
               inputProps: {
+                autoFocus: this.props.autoFocus,
                 'aria-label': `${this.props.columnDef.title}: press space to edit`,
               }
             },
@@ -140,6 +143,7 @@ class MTableEditField extends React.Component {
                 style: { fontSize: 13 }
               },
               inputProps: {
+                autoFocus: this.props.autoFocus,
                 'aria-label': `${this.props.columnDef.title}: press space to edit`,
               }
             },
@@ -167,6 +171,7 @@ class MTableEditField extends React.Component {
                 style: { fontSize: 13 }
               },
               inputProps: {
+                autoFocus: this.props.autoFocus,
                 'aria-label': `${this.props.columnDef.title}: press space to edit`,
               }
             },
