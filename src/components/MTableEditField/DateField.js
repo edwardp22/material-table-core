@@ -1,6 +1,5 @@
 import React from 'react';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
-import { TextField } from '@mui/material';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 
 function DateField({
@@ -39,15 +38,16 @@ function DateField({
         format={dateFormat}
         value={value || null}
         onChange={onChange}
-        clearable
-        InputProps={{
-          style: {
-            fontSize: 13
+        slotProps={{
+          actionBar: { actions: ['clear'] },
+          textField: {
+            InputProps: {
+              style: { fontSize: 13 }
+            },
+            inputProps: {
+              'aria-label': `${columnDef.title}: press space to edit`,
+            }
           }
-        }}
-        renderInput={(params) => <TextField {...params} />}
-        inputProps={{
-          'aria-label': `${columnDef.title}: press space to edit`
         }}
       />
     </LocalizationProvider>

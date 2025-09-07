@@ -16,15 +16,17 @@ function CurrencyField({ forwardedRef, ...props }) {
         }
         return props.onChange(value);
       }}
-      InputProps={{
-        style: {
-          fontSize: 13,
-          textAlign: 'right'
+      slotProps={{
+        input: {
+          style: {
+            fontSize: 13,
+            textAlign: 'right'
+          }
+        },
+        htmlInput: {
+          'aria-label': props.columnDef.title,
+          style: { textAlign: 'right' }
         }
-      }}
-      inputProps={{
-        'aria-label': props.columnDef.title,
-        style: { textAlign: 'right' }
       }}
       onKeyDown={props.onKeyDown}
       autoFocus={props.autoFocus}

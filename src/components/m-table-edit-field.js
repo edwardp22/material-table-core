@@ -7,7 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import {
   LocalizationProvider,
   TimePicker,
@@ -77,9 +77,11 @@ class MTableEditField extends React.Component {
                   width: 24,
                   marginLeft: 9
                 }}
-                inputProps={{
-                  autoFocus: this.props.autoFocus,
-                  'aria-label': this.props.columnDef.title
+                slotProps={{
+                  input: {
+                    autoFocus: this.props.autoFocus,
+                    'aria-label': this.props.columnDef.title
+                  }
                 }}
               />
             }
@@ -93,7 +95,7 @@ class MTableEditField extends React.Component {
   renderDateField() {
     const dateFormat =
       this.props.columnDef.dateSetting &&
-      this.props.columnDef.dateSetting.format
+        this.props.columnDef.dateSetting.format
         ? this.props.columnDef.dateSetting.format
         : 'dd.MM.yyyy';
     return (
@@ -103,19 +105,20 @@ class MTableEditField extends React.Component {
       >
         <DatePicker
           {...this.getProps()}
-          renderInput={(props) => <TextField {...props} />}
           format={dateFormat}
           value={this.props.value || null}
           onChange={this.props.onChange}
-          clearable
-          InputProps={{
-            style: {
-              fontSize: 13
-            }
-          }}
-          inputProps={{
-            autoFocus: this.props.autoFocus,
-            'aria-label': `${this.props.columnDef.title}: press space to edit`
+          slotProps={{
+            actionBar: { actions: ['clear'] },
+            textField: {
+              InputProps: {
+                style: { fontSize: 13 }
+              },
+              inputProps: {
+                autoFocus: this.props.autoFocus,
+                'aria-label': `${this.props.columnDef.title}: press space to edit`,
+              }
+            },
           }}
         />
       </LocalizationProvider>
@@ -130,19 +133,20 @@ class MTableEditField extends React.Component {
       >
         <TimePicker
           {...this.getProps()}
-          renderInput={(props) => <TextField {...props} />}
           format="HH:mm:ss"
           value={this.props.value || null}
           onChange={this.props.onChange}
-          clearable
-          InputProps={{
-            style: {
-              fontSize: 13
-            }
-          }}
-          inputProps={{
-            autoFocus: this.props.autoFocus,
-            'aria-label': `${this.props.columnDef.title}: press space to edit`
+          slotProps={{
+            actionBar: { actions: ['clear'] },
+            textField: {
+              InputProps: {
+                style: { fontSize: 13 }
+              },
+              inputProps: {
+                autoFocus: this.props.autoFocus,
+                'aria-label': `${this.props.columnDef.title}: press space to edit`,
+              }
+            },
           }}
         />
       </LocalizationProvider>
@@ -157,19 +161,20 @@ class MTableEditField extends React.Component {
       >
         <DateTimePicker
           {...this.getProps()}
-          renderInput={(props) => <TextField {...props} />}
           format="dd.MM.yyyy HH:mm:ss"
           value={this.props.value || null}
           onChange={this.props.onChange}
-          clearable
-          InputProps={{
-            style: {
-              fontSize: 13
-            }
-          }}
-          inputProps={{
-            autoFocus: this.props.autoFocus,
-            'aria-label': `${this.props.columnDef.title}: press space to edit`
+          slotProps={{
+            actionBar: { actions: ['clear'] },
+            textField: {
+              InputProps: {
+                style: { fontSize: 13 }
+              },
+              inputProps: {
+                autoFocus: this.props.autoFocus,
+                'aria-label': `${this.props.columnDef.title}: press space to edit`,
+              }
+            },
           }}
         />
       </LocalizationProvider>
@@ -194,19 +199,21 @@ class MTableEditField extends React.Component {
               : event.target.value
           )
         }
-        InputProps={{
-          style: {
-            minWidth: 50,
-            fontSize: 13
+        slotProps={{
+          input: {
+            style: {
+              minWidth: 50,
+              fontSize: 13
+            }
+          },
+          htmlInput: {
+            autoFocus: this.props.autoFocus,
+            'aria-label': this.props.columnDef.title,
+            style:
+              this.props.columnDef.type === 'numeric'
+                ? { textAlign: 'right' }
+                : {}
           }
-        }}
-        inputProps={{
-          autoFocus: this.props.autoFocus,
-          'aria-label': this.props.columnDef.title,
-          style:
-            this.props.columnDef.type === 'numeric'
-              ? { textAlign: 'right' }
-              : {}
         }}
       />
     );
@@ -229,16 +236,18 @@ class MTableEditField extends React.Component {
           }
           return this.props.onChange(value);
         }}
-        InputProps={{
-          style: {
-            fontSize: 13,
-            textAlign: 'right'
+        slotProps={{
+          input: {
+            style: {
+              fontSize: 13,
+              textAlign: 'right'
+            }
+          },
+          htmlInput: {
+            autoFocus: this.props.autoFocus,
+            'aria-label': this.props.columnDef.title,
+            style: { textAlign: 'right' }
           }
-        }}
-        inputProps={{
-          autoFocus: this.props.autoFocus,
-          'aria-label': this.props.columnDef.title,
-          style: { textAlign: 'right' }
         }}
         onKeyDown={this.props.onKeyDown}
       />

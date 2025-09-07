@@ -91,7 +91,7 @@ export function MTableToolbar(props) {
           autoFocus={options.searchAutoFocus}
           sx={
             options.searchFieldAlignment === 'left' &&
-            options.showTitle === false
+              options.showTitle === false
               ? undefined
               : styles.searchField
           }
@@ -99,29 +99,31 @@ export function MTableToolbar(props) {
           onChange={(event) => onSearchChange(event.target.value)}
           placeholder={localization.searchPlaceholder}
           variant={options.searchFieldVariant}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Tooltip title={localization.searchTooltip}>
-                  <icons.Search fontSize="small" />
-                </Tooltip>
-              </InputAdornment>
-            ),
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton
-                  disabled={!searchText}
-                  onClick={() => onSearchChange('')}
-                  aria-label={localization.clearSearchAriaLabel}
-                >
-                  <icons.ResetSearch fontSize="small" aria-label="clear" />
-                </IconButton>
-              </InputAdornment>
-            ),
-            style: options.searchFieldStyle,
-            inputProps: {
-              'aria-label': localization.searchAriaLabel
-            }
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Tooltip title={localization.searchTooltip}>
+                    <icons.Search fontSize="small" />
+                  </Tooltip>
+                </InputAdornment>
+              ),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    disabled={!searchText}
+                    onClick={() => onSearchChange('')}
+                    aria-label={localization.clearSearchAriaLabel}
+                  >
+                    <icons.ResetSearch fontSize="small" aria-label="clear" />
+                  </IconButton>
+                </InputAdornment>
+              ),
+              style: options.searchFieldStyle,
+              inputProps: {
+                'aria-label': localization.searchAriaLabel
+              }
+            },
           }}
         />
       );
@@ -295,8 +297,8 @@ export function MTableToolbar(props) {
         ? localization.nRowsSelected(selectedRows.length)
         : localization.nRowsSelected.replace('{0}', selectedRows.length)
       : options.showTitle
-      ? props.title
-      : null;
+        ? props.title
+        : null;
   return (
     <Toolbar
       ref={props.forwardedRef}
@@ -360,13 +362,13 @@ const styles = {
   highlight: (theme) =>
     theme.palette.mode === 'light'
       ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85)
-        }
+        color: theme.palette.secondary.main,
+        backgroundColor: lighten(theme.palette.secondary.light, 0.85)
+      }
       : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark
-        },
+        color: theme.palette.text.primary,
+        backgroundColor: theme.palette.secondary.dark
+      },
   spacer: {
     flex: '1 1 10%'
   },
