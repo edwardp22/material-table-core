@@ -119,7 +119,7 @@
     "deepmerge": "^4.2.2",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.8.1",
-    "uuid": "^12.0.0",
+    "uuid": "^13.0.0",
     "zustand": "^5.0.8"
   },
   "peerDependencies": {
