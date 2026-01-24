@@ -26,7 +26,7 @@ export function MTableToolbar(props) {
 
   const selectedRows = React.useMemo(
     () => props.originalData.filter((a) => a.tableData.checked),
-    [props.originalData]
+    [props.originalData, props.selectedCount]
   );
 
   const onSearchChange = (searchText) => {
@@ -326,6 +326,7 @@ const defaultProps = {
   columnsHiddenInColumnsButton: false, // By default, all columns are shown in the Columns Button (columns action when `options.columnsButton = true`)
   searchText: '',
   originalData: [],
+  selectedCount: 0,
   title: 'No Title!'
 };
 
@@ -340,6 +341,7 @@ MTableToolbar.propTypes = {
   searchText: PropTypes.string,
   onSearchChanged: PropTypes.func.isRequired,
   originalData: PropTypes.array,
+  selectedCount: PropTypes.number,
   title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   renderData: PropTypes.array,
   data: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),

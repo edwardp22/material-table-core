@@ -908,7 +908,7 @@ export default class DataManager {
       lastEditingRow: this.lastEditingRow,
       orderByCollection: this.orderByCollection,
       maxColumnSort: this.maxColumnSort,
-      originalData: [...this.data],
+      originalData: this.data,
       pageSize: this.pageSize,
       renderData: this.pagedData,
       searchText: this.searchText,
@@ -932,7 +932,7 @@ export default class DataManager {
       this.paged =
         false;
 
-    this.filteredData = [...this.data];
+    this.filteredData = this.applyFilters ? [...this.data] : this.data;
 
     if (this.applyFilters) {
       this.columns
@@ -1049,9 +1049,10 @@ export default class DataManager {
   searchData = () => {
     this.grouped = this.treefied = this.sorted = this.paged = false;
 
-    this.searchedData = [...this.filteredData];
+    const shouldSearch = this.searchText && this.applySearch;
+    this.searchedData = shouldSearch ? [...this.filteredData] : this.filteredData;
 
-    if (this.searchText && this.applySearch) {
+    if (shouldSearch) {
       const trimmedSearchText = this.searchText.trim();
       this.searchedData = this.searchedData.filter((row) => {
         return this.columns
@@ -1379,27 +1380,48 @@ export default class DataManager {
         sortTree(this.sortedData);
       }
     } else if (this.isDataType('normal')) {
-      this.sortedData = [...this.searchedData];
-      if (
+      const shouldSort =
+        this.applySort &&
         this.maxColumnSort > 0 &&
-        this.getOrderByCollection().length > 0 &&
-        this.applySort
-      ) {
-        this.sortedData = this.sortList(this.sortedData);
-      }
+        this.getOrderByCollection().length > 0;
+      this.sortedData = shouldSort
+        ? this.sortList([...this.searchedData])
+        : this.searchedData;
     }
 
     this.sorted = true;
   }
 
   pageData() {
-    this.pagedData = [...this.sortedData];
-
     if (this.paging) {
       const startIndex = this.currentPage * this.pageSize;
       const endIndex = startIndex + this.pageSize;
 
-      this.pagedData = this.pagedData.slice(startIndex, endIndex);
+      this.pagedData = this.sortedData.slice(startIndex, endIndex);
+    } else {
+      this.pagedData = this.sortedData;
+    }
+
+    if (
+      process.env.NODE_ENV === 'development' &&
+      process.env.MTABLE_DEBUG_MEMORY
+    ) {
+      const total = this.sortedData.length;
+      const pageLen = this.pagedData.length;
+      if (this.paging && pageLen > this.pageSize) {
+        // Guard against accidentally rendering more than a page.
+        console.warn('material-table: pagedData exceeds pageSize', {
+          pageLen,
+          pageSize: this.pageSize,
+          page: this.currentPage
+        });
+      }
+      console.debug('material-table: pageData', {
+        total,
+        pageLen,
+        page: this.currentPage,
+        pageSize: this.pageSize
+      });
     }
 
     this.paged = true;
