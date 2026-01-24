@@ -14,6 +14,14 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [7.0.2](https://github.com/edwardp22/material-table-core/compare/v7.0.1...v7.0.2) (2026-01-24)
+
+
+### Bug Fixes
+
+* memory leak ([#29](https://github.com/edwardp22/material-table-core/issues/29)) ([35ea047](https://github.com/edwardp22/material-table-core/commit/35ea0474d13beb5ea0a6b904b1ddfc63af6cb78b))
+* update packages ([#31](https://github.com/edwardp22/material-table-core/issues/31)) ([340822c](https://github.com/edwardp22/material-table-core/commit/340822c825b3e97e70ddde84450fa8703976c790))
+
 ## [7.0.1](https://github.com/edwardp22/material-table-core/compare/v7.0.0...v7.0.1) (2025-09-07)
 
 
