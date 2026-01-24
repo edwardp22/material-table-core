@@ -14,6 +14,13 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [7.0.3](https://github.com/edwardp22/material-table-core/compare/v7.0.2...v7.0.3) (2026-01-24)
+
+
+### Bug Fixes
+
+* remove process ([#32](https://github.com/edwardp22/material-table-core/issues/32)) ([e48312b](https://github.com/edwardp22/material-table-core/commit/e48312bb9c3d52742a95edcd59948ca70689e0b9))
+
 ## [7.0.2](https://github.com/edwardp22/material-table-core/compare/v7.0.1...v7.0.2) (2026-01-24)
 
 
