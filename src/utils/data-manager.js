@@ -63,7 +63,7 @@ export default class DataManager {
         return obj;
       }, {});
     }
-    if (process.env.NODE_ENV === 'development' && !this.checkForId) {
+    if (!this.checkForId) {
       this.checkForId = true;
       if (data.some((d) => d[idSynonym] === undefined)) {
         console.warn(
@@ -176,8 +176,8 @@ export default class DataManager {
 
     this.tableStyleWidth =
       this.tableWidth === 'full' ||
-      undefWidthCols.length > 0 ||
-      usedWidthNotPx.length > 0
+        undefWidthCols.length > 0 ||
+        usedWidthNotPx.length > 0
         ? '100%'
         : usedWidthPx;
   }
@@ -930,7 +930,7 @@ export default class DataManager {
       this.treefied =
       this.sorted =
       this.paged =
-        false;
+      false;
 
     this.filteredData = this.applyFilters ? [...this.data] : this.data;
 
@@ -1291,19 +1291,19 @@ export default class DataManager {
           return list.sort(
             columnDef.tableData.groupSort === 'desc'
               ? (a, b) =>
-                  columnDef.customSort(
-                    b.value,
-                    a.value,
-                    'group',
-                    columnDef.tableData.groupSort
-                  )
+                columnDef.customSort(
+                  b.value,
+                  a.value,
+                  'group',
+                  columnDef.tableData.groupSort
+                )
               : (a, b) =>
-                  columnDef.customSort(
-                    a.value,
-                    b.value,
-                    'group',
-                    columnDef.tableData.groupSort
-                  )
+                columnDef.customSort(
+                  a.value,
+                  b.value,
+                  'group',
+                  columnDef.tableData.groupSort
+                )
           );
         } else {
           return list.sort(
@@ -1400,28 +1400,6 @@ export default class DataManager {
       this.pagedData = this.sortedData.slice(startIndex, endIndex);
     } else {
       this.pagedData = this.sortedData;
-    }
-
-    if (
-      process.env.NODE_ENV === 'development' &&
-      process.env.MTABLE_DEBUG_MEMORY
-    ) {
-      const total = this.sortedData.length;
-      const pageLen = this.pagedData.length;
-      if (this.paging && pageLen > this.pageSize) {
-        // Guard against accidentally rendering more than a page.
-        console.warn('material-table: pagedData exceeds pageSize', {
-          pageLen,
-          pageSize: this.pageSize,
-          page: this.currentPage
-        });
-      }
-      console.debug('material-table: pageData', {
-        total,
-        pageLen,
-        page: this.currentPage,
-        pageSize: this.pageSize
-      });
     }
 
     this.paged = true;
