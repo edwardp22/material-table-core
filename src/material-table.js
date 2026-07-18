@@ -933,15 +933,17 @@ export default class MaterialTable extends React.Component {
                 }
                 rowsPerPage={this.state.pageSize}
                 rowsPerPageOptions={props.options.pageSizeOptions}
-                SelectProps={{
-                  renderValue: (value) => (
-                    <Box sx={{ padding: '0px 5px' }}>
-                      {value +
-                        ' ' +
-                        props.localization.pagination.labelRows +
-                        ' '}
-                    </Box>
-                  )
+                slotProps={{
+                  select: {
+                    renderValue: (value) => (
+                      <Box sx={{ padding: '0px 5px' }}>
+                        {value +
+                          ' ' +
+                          props.localization.pagination.labelRows +
+                          ' '}
+                      </Box>
+                    )
+                  }
                 }}
                 page={this.isRemoteData() ? this.state.query.page : currentPage}
                 onPageChange={this.onPageChange}

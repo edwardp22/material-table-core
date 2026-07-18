@@ -111,14 +111,16 @@ class MTableEditField extends React.Component {
           slotProps={{
             actionBar: { actions: ['clear'] },
             textField: {
-              InputProps: {
-                style: { fontSize: 13 }
-              },
-              inputProps: {
-                autoFocus: this.props.autoFocus,
-                'aria-label': `${this.props.columnDef.title}: press space to edit`,
+              slotProps: {
+                input: {
+                  style: { fontSize: 13 }
+                },
+                htmlInput: {
+                  autoFocus: this.props.autoFocus,
+                  'aria-label': `${this.props.columnDef.title}: press space to edit`
+                }
               }
-            },
+            }
           }}
         />
       </LocalizationProvider>
@@ -139,14 +141,16 @@ class MTableEditField extends React.Component {
           slotProps={{
             actionBar: { actions: ['clear'] },
             textField: {
-              InputProps: {
-                style: { fontSize: 13 }
-              },
-              inputProps: {
-                autoFocus: this.props.autoFocus,
-                'aria-label': `${this.props.columnDef.title}: press space to edit`,
+              slotProps: {
+                input: {
+                  style: { fontSize: 13 }
+                },
+                htmlInput: {
+                  autoFocus: this.props.autoFocus,
+                  'aria-label': `${this.props.columnDef.title}: press space to edit`
+                }
               }
-            },
+            }
           }}
         />
       </LocalizationProvider>
@@ -167,14 +171,16 @@ class MTableEditField extends React.Component {
           slotProps={{
             actionBar: { actions: ['clear'] },
             textField: {
-              InputProps: {
-                style: { fontSize: 13 }
-              },
-              inputProps: {
-                autoFocus: this.props.autoFocus,
-                'aria-label': `${this.props.columnDef.title}: press space to edit`,
+              slotProps: {
+                input: {
+                  style: { fontSize: 13 }
+                },
+                htmlInput: {
+                  autoFocus: this.props.autoFocus,
+                  'aria-label': `${this.props.columnDef.title}: press space to edit`
+                }
               }
-            },
+            }
           }}
         />
       </LocalizationProvider>
