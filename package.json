@@ -4,7 +4,7 @@
     "access": "public"
   },
   "url": "https://material-table-core.github.io/",
-  "version": "7.0.3",
+  "version": "7.0.4",
   "description": "Maintained fork of @material-table/core with React 18/19, Material UI 7, and dual ESM/CommonJS compatibility.",
   "main": "./dist/index.cjs",
   "module": "./dist/esm/index.js",
