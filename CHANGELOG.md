@@ -14,6 +14,13 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [7.0.4](https://github.com/edwardp22/material-table-core/compare/v7.0.3...v7.0.4) (2026-07-18)
+
+
+### Bug Fixes
+
+* **deps:** sincronizar fork y compatibilidad Vite 8 ([#39](https://github.com/edwardp22/material-table-core/issues/39)) ([1bfd686](https://github.com/edwardp22/material-table-core/commit/1bfd6863c2c9e043ab8d9fcb261e2b6a09aa8a04))
+
 ## [7.0.3](https://github.com/edwardp22/material-table-core/compare/v7.0.2...v7.0.3) (2026-01-24)
 
 
