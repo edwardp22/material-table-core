@@ -1,12 +1,11 @@
 import { create, useStore } from 'zustand';
 import React from 'react';
 import deepEql from 'deep-eql';
+import merge from 'deepmerge';
 import defaultLocalization from '../defaults/props.localization';
 import defaultOptions from '../defaults/props.options';
 import defaultIcons from '../defaults/props.icons';
 import defaultComponents from '../defaults/props.components';
-
-const merge = require('deepmerge');
 
 const ZustandContext = React.createContext();
 

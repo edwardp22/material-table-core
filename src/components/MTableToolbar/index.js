@@ -361,16 +361,20 @@ const styles = {
     paddingRight: 1,
     paddingLeft: 2
   },
-  highlight: (theme) =>
-    theme.palette.mode === 'light'
+  highlight: (theme) => {
+    if (!theme) return {};
+
+    const palette = theme.vars?.palette ?? theme.palette;
+    return palette.mode === 'light'
       ? {
-        color: theme.palette.secondary.main,
-        backgroundColor: lighten(theme.palette.secondary.light, 0.85)
-      }
+          color: palette.secondary.main,
+          backgroundColor: lighten(palette.secondary.light, 0.85)
+        }
       : {
-        color: theme.palette.text.primary,
-        backgroundColor: theme.palette.secondary.dark
-      },
+          color: palette.text.primary,
+          backgroundColor: palette.secondary.dark
+        };
+  },
   spacer: {
     flex: '1 1 10%'
   },

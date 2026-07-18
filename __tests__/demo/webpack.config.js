@@ -1,7 +1,4 @@
-const webpack = require('webpack');
 const path = require('path');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: [path.resolve(__dirname, './demo.js')],
@@ -22,15 +19,13 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-    // new BundleAnalyzerPlugin()
-  ],
   devServer: {
-    contentBase: '__tests__/demo',
+    static: {
+      directory: path.resolve(__dirname)
+    },
     hot: true,
-    disableHostCheck: true,
+    allowedHosts: 'all',
     port: 8080,
-    open: true
+    open: false
   }
 };
