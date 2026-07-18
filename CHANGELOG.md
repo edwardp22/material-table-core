@@ -14,6 +14,17 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [8.0.0](https://github.com/edwardp22/material-table-core/compare/v7.0.4...v8.0.0) (2026-07-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* support Material UI 9 ([#41](https://github.com/edwardp22/material-table-core/issues/41))
+
+### Features
+
+* support Material UI 9 ([#41](https://github.com/edwardp22/material-table-core/issues/41)) ([13e3f8c](https://github.com/edwardp22/material-table-core/commit/13e3f8c77a09db96c6327ebf7bb4b2f0392d18cb))
+
 ## [7.0.4](https://github.com/edwardp22/material-table-core/compare/v7.0.3...v7.0.4) (2026-07-18)
 
 
