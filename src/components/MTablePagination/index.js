@@ -7,6 +7,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import * as CommonValues from '../../utils/common-values';
+import { isDevelopmentEnvironment } from '../../utils/environment';
 import { useLocalizationStore, useIconStore } from '@store/LocalizationStore';
 /* eslint-enable no-unused-vars */
 
@@ -15,14 +16,14 @@ function MTablePagination(props) {
   const icons = useIconStore();
   const localization = useLocalizationStore().pagination;
 
-  if (!props.onPageChange) {
+  if (isDevelopmentEnvironment() && !props.onPageChange) {
     console.error(
       'The prop `onPageChange` in pagination is undefined and paging does not work. ' +
       'This is most likely caused by an old material-ui version <= 4.11.X.' +
       'To fix this, install either material-ui >=4.12 or downgrade material-table-core to <=3.0.15.'
     );
   }
-  if (localization.labelRowsSelect) {
+  if (isDevelopmentEnvironment() && localization.labelRowsSelect) {
     console.warn(
       'The prop `labelRowsSelect` was renamed to labelDisplayedRows. Please rename the prop accordingly: https://mui.com/material-ui/api/table-pagination/#main-content.'
     );

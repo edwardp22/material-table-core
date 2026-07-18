@@ -5,7 +5,7 @@
   },
   "url": "https://material-table-core.github.io/",
   "version": "7.0.3",
-  "description": "Fork of material-table (https://github.com/mbrn/material-table). Datatable for React based on https://material-ui.com/api/table/ with additional features and customizations by edwardp22.",
+  "description": "Maintained fork of @material-table/core with React 18/19, Material UI 7, and dual ESM/CommonJS compatibility.",
   "main": "./dist/index.cjs",
   "module": "./dist/esm/index.js",
   "exports": {
@@ -22,7 +22,7 @@
     "types"
   ],
   "scripts": {
-    "prepare": "husky install && npm run build",
+    "prepare": "husky && npm run build",
     "start": "npx webpack serve --config ./__tests__/demo/webpack.config.js --mode development --progress",
     "build": "node esbuild.config.mjs",
     "lint": "npm run eslint && npm run tsc",
@@ -48,7 +48,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/material-table-core/core.git"
+    "url": "git+https://github.com/edwardp22/material-table-core.git"
   },
   "keywords": [
     "react",
@@ -64,9 +64,9 @@
   "author": "edwardp22 (fork maintainer), Mehmet Baran, @material-table/core contributors",
   "license": "MIT",
   "bugs": {
-    "url": "https://material-table-core.github.io/"
+    "url": "https://github.com/edwardp22/material-table-core/issues"
   },
-  "homepage": "https://material-table-core.github.io/",
+  "homepage": "https://github.com/edwardp22/material-table-core#readme",
   "devDependencies": {
     "@babel/cli": "^7.29.7",
     "@babel/core": "^7.29.7",
@@ -76,8 +76,8 @@
     "@babel/plugin-transform-runtime": "^7.29.7",
     "@babel/preset-env": "^7.29.7",
     "@babel/preset-react": "^7.29.7",
-    "@commitlint/cli": "^20.5.3",
-    "@commitlint/config-conventional": "^20.5.3",
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/system": "^7.3.11",
@@ -85,12 +85,11 @@
     "@testing-library/react": "^16.3.2",
     "@types/jest": "^30.0.0",
     "@types/react": "^19.2.17",
-    "@webpack-cli/serve": "^3.0.1",
     "babel-jest": "^30.4.1",
     "babel-loader": "^10.1.1",
     "babel-plugin-import": "^1.13.8",
     "babel-plugin-module-resolver": "^5.0.3",
-    "check-dts": "^0.9.0",
+    "check-dts": "^1.0.0",
     "core-js": "^3.49.0",
     "esbuild": "^0.28.1",
     "eslint": "^8.57.1",
@@ -111,11 +110,10 @@
     "react-dom": "^19.2.7",
     "react-test-renderer": "^19.2.7",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "webpack": "^5.108.4",
-    "webpack-bundle-analyzer": "^5.3.1",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.6"
+    "webpack-cli": "^7.2.1",
+    "webpack-dev-server": "^6.0.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.29.7",
@@ -129,16 +127,17 @@
     "deepmerge": "^4.3.1",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.8.1",
-    "uuid": "^13.0.2",
+    "uuid": "^14.0.1",
     "zustand": "^5.0.14"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.9.0 <12",
     "@emotion/styled": ">=11.8.1 <12",
-    "@mui/system": ">=7.3.1",
+    "@mui/system": ">=7.3.1 <8",
     "react": ">=18.3.1",
     "react-dom": ">=18.3.1"
   },
+  "upstreamRepository": "https://github.com/material-table-core/core",
   "originalRepository": "https://github.com/mbrn/material-table",
-  "forkedFrom": "material-table by mbrn"
+  "forkedFrom": "@material-table/core"
 }

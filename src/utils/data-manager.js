@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { selectFromObject } from './';
 import { widthToNumber } from './common-values';
 import { ALL_COLUMNS } from './constants';
+import { isDevelopmentEnvironment } from './environment';
 
 export default class DataManager {
   checkForId = false;
@@ -63,7 +64,7 @@ export default class DataManager {
         return obj;
       }, {});
     }
-    if (!this.checkForId) {
+    if (isDevelopmentEnvironment() && !this.checkForId) {
       this.checkForId = true;
       if (data.some((d) => d[idSynonym] === undefined)) {
         console.warn(

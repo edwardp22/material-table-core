@@ -1,4 +1,5 @@
 import React from 'react';
+import { isDevelopmentEnvironment } from '../utils/environment';
 import PropTypes from 'prop-types';
 import TableCell from '@mui/material/TableCell';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -88,7 +89,7 @@ class MTableEditCell extends React.Component {
           );
         })
         .catch((error) => {
-          console.log(error);
+          if (isDevelopmentEnvironment()) console.log(error);
           this.setState({ isLoading: false });
         });
     });
