@@ -119,11 +119,11 @@ export function MTableToolbar(props) {
                   </IconButton>
                 </InputAdornment>
               ),
-              style: options.searchFieldStyle,
-              inputProps: {
-                'aria-label': localization.searchAriaLabel
-              }
+              style: options.searchFieldStyle
             },
+            htmlInput: {
+              'aria-label': localization.searchAriaLabel
+            }
           }}
         />
       );

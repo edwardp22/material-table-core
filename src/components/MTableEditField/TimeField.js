@@ -13,11 +13,13 @@ function TimeField({ forwardedRef, ...props }) {
         onChange={props.onChange}
         slotProps={{
           textField: {
-            InputProps: {
-              style: { fontSize: 13 }
-            },
-            inputProps: {
-              'aria-label': `${props.columnDef.title}: press space to edit`,
+            slotProps: {
+              input: {
+                style: { fontSize: 13 }
+              },
+              htmlInput: {
+                'aria-label': `${props.columnDef.title}: press space to edit`
+              }
             }
           },
           actionBar: {

@@ -18,12 +18,12 @@ Their work remains the foundation of this package. Changes maintained here are i
 The fork currently provides:
 
 - React 18 and React 19 support.
-- Material UI 7 compatibility without requiring a migration to a newer MUI major.
+- Compatibility with both Material UI 7 and Material UI 9.
 - Explicit ESM and CommonJS package exports for Vite 8, Node.js, and traditional bundlers.
 - Browser and bundler compatibility fixes for applications with established dependency constraints.
-- Selected upstream bug fixes that can be integrated without breaking the supported MUI line.
+- Selected upstream bug fixes adapted to the supported MUI lines.
 
-Upstream changes are reviewed before being merged. Release commits, publishing workflows, dependency upgrades to unsupported MUI majors, and changes that regress the dual-package build are not copied automatically.
+Upstream changes are reviewed before being merged. Release commits, publishing workflows, and changes that regress the supported dependency matrix or dual-package build are not copied automatically.
 
 ## Improvements compared with upstream `master`
 
@@ -34,12 +34,12 @@ The following comparison was reviewed against `material-table-core/core@9f132317
 | Package exports | Declares ESM and CommonJS entry points, with separate Babel and esbuild paths | Builds and verifies bundled ESM and CommonJS outputs from the same source entry point |
 | Browser globals | Some development warnings read `process.env` directly | Uses a browser-safe environment check without requiring a global `process` object |
 | React compatibility | Declares React 19.2 or newer | Supports React 18.3 and React 19 |
-| Material UI compatibility | Dependency ranges are not bounded to one MUI major | Intentionally supports MUI 7, Emotion 11, and MUI X Date Pickers 8 |
-| MUI component APIs | Contains a mixture of legacy and current input/picker props | Keeps the `slotProps` and date-adapter APIs used by the supported MUI versions |
+| Material UI compatibility | Dependency ranges are not bounded to one MUI major | Supports Material UI 7 or 9, Emotion 11, and the matching MUI X Date Pickers 8 or 9 line |
+| MUI component APIs | Contains a mixture of legacy and current input/picker props | Uses the stable `slotProps` and date-adapter APIs shared by the supported MUI versions |
 | Data processing | Uses defensive array copies throughout filtering, searching, sorting, and paging | Preserves defensive copies before mutations while avoiding unnecessary copies when a stage is inactive |
 | Row editing | Can retain the supplied row object directly in edit state | Creates an isolated edit value so cancelling an edit does not mutate the supplied row |
 | Icon loading | Uses broader icon imports in parts of the package | Uses direct icon entry points to reduce bundler scanning and improve tree shaking |
-| Dependency maintenance | Tracks upstream release requirements | Uses current compatible tooling while treating MUI and lint/build major migrations separately |
+| Dependency maintenance | Tracks upstream release requirements | Exposes MUI packages as peers so applications keep one compatible MUI runtime |
 
 ### Upstream improvements retained
 
@@ -60,9 +60,12 @@ The fork does not copy upstream release commits, changelog-only commits, reposit
 
 ```bash
 npm install @edwardp22/material-table-core \
-  @mui/material@^7 @mui/icons-material@^7 @mui/system@^7 \
+  @mui/material@^9 @mui/icons-material@^9 @mui/system@^9 \
+  @mui/x-date-pickers@^9 \
   @emotion/react@^11 @emotion/styled@^11
 ```
+
+Applications that remain on Material UI 7 can install the matching MUI 7 packages and MUI X Date Pickers 8 instead. Matching the Material UI and MUI X lines shown below is recommended.
 
 If a change has not been published to npm yet, install a reviewed commit explicitly:
 
@@ -78,13 +81,13 @@ Pinning a commit SHA is recommended over a branch name for reproducible builds.
 | --- | --- |
 | React | 18.3 or 19.x |
 | React DOM | 18.3 or 19.x |
-| Material UI | 7.x |
+| Material UI | 7.x or 9.x |
 | Emotion | 11.x |
-| MUI X Date Pickers | 8.x |
+| MUI X Date Pickers | 8.x with Material UI 7; 9.x with Material UI 9 |
 | Vite | Includes explicit ESM support, tested with Vite 8 |
 | CommonJS | Supported through `require()` package exports |
 
-MUI major upgrades are intentionally handled separately because they can require application-level compatibility changes.
+Version 8 of this fork introduces Material UI 9 support as a deliberate major compatibility change while retaining the previously supported Material UI 7 line.
 
 ## Basic usage
 

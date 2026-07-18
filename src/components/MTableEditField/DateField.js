@@ -41,11 +41,13 @@ function DateField({
         slotProps={{
           actionBar: { actions: ['clear'] },
           textField: {
-            InputProps: {
-              style: { fontSize: 13 }
-            },
-            inputProps: {
-              'aria-label': `${columnDef.title}: press space to edit`,
+            slotProps: {
+              input: {
+                style: { fontSize: 13 }
+              },
+              htmlInput: {
+                'aria-label': `${columnDef.title}: press space to edit`
+              }
             }
           }
         }}

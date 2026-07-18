@@ -11,7 +11,7 @@ import Check from '@mui/icons-material/Check';
 import ChevronLeft from '@mui/icons-material/ChevronLeft';
 import ChevronRight from '@mui/icons-material/ChevronRight';
 import Clear from '@mui/icons-material/Clear';
-import DeleteOutline from '@mui/icons-material/DeleteOutline';
+import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import Edit from '@mui/icons-material/Edit';
 import FilterList from '@mui/icons-material/FilterList';
 import FirstPage from '@mui/icons-material/FirstPage';
@@ -33,7 +33,7 @@ export default {
     <Clear {...props} ref={ref} data-testid="clear" />
   )),
   Delete: forwardRef((props, ref) => (
-    <DeleteOutline {...props} ref={ref} data-testid="delete_outline" />
+    <DeleteOutlined {...props} ref={ref} data-testid="delete_outline" />
   )),
   DetailPanel: forwardRef((props, ref) => (
     <ChevronRight {...props} ref={ref} data-testid="chevron_right" />

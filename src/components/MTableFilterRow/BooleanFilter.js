@@ -5,7 +5,9 @@ function BooleanFilter({ forwardedRef, columnDef, onFilterChanged }) {
   return (
     <Checkbox
       ref={forwardedRef}
-      inputProps={{ 'aria-label': `Filter of ${columnDef.title}` }}
+      slotProps={{
+        input: { 'aria-label': `Filter of ${columnDef.title}` }
+      }}
       indeterminate={columnDef.tableData.filterValue === undefined}
       checked={columnDef.tableData.filterValue === 'checked'}
       onChange={() => {
