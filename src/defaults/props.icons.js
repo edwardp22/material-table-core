@@ -4,25 +4,23 @@
 
 /* eslint-disable react/display-name */
 import React, { forwardRef } from 'react';
-import { Icon } from '@mui/material';
-import {
-  AddBox,
-  ArrowDownward,
-  Check,
-  ChevronLeft,
-  ChevronRight,
-  Clear,
-  DeleteOutline,
-  Edit,
-  FilterList,
-  FirstPage,
-  LastPage,
-  Remove,
-  SaveAlt,
-  Search,
-  ViewColumn,
-  Replay
-} from '@mui/icons-material';
+import Icon from '@mui/material/Icon';
+import AddBox from '@mui/icons-material/AddBox';
+import ArrowDownward from '@mui/icons-material/ArrowDownward';
+import Check from '@mui/icons-material/Check';
+import ChevronLeft from '@mui/icons-material/ChevronLeft';
+import ChevronRight from '@mui/icons-material/ChevronRight';
+import Clear from '@mui/icons-material/Clear';
+import DeleteOutline from '@mui/icons-material/DeleteOutline';
+import Edit from '@mui/icons-material/Edit';
+import FilterList from '@mui/icons-material/FilterList';
+import FirstPage from '@mui/icons-material/FirstPage';
+import LastPage from '@mui/icons-material/LastPage';
+import Remove from '@mui/icons-material/Remove';
+import Replay from '@mui/icons-material/Replay';
+import SaveAlt from '@mui/icons-material/SaveAlt';
+import Search from '@mui/icons-material/Search';
+import ViewColumn from '@mui/icons-material/ViewColumn';
 
 export default {
   Add: forwardRef((props, ref) => (

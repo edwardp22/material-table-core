@@ -60,6 +60,8 @@ describe('Summary row of table', () => {
       />
     );
 
-    expect(screen.getByText('Summary_Enum')).toHaveStyle({ color: 'red' });
+    expect(screen.getByText('Summary_Enum')).toHaveStyle({
+      color: 'rgb(255, 0, 0)'
+    });
   });
 });

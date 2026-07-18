@@ -23,7 +23,7 @@ describe('Resize Column', () => {
     return width && width.startsWith('calc(')
       ? {
           ...style,
-          getPropertyValue: style.getPropertyValue,
+          getPropertyValue: style.getPropertyValue.bind(style),
           width: `${evalCalc(width)}px`
         }
       : style;
@@ -139,7 +139,7 @@ describe('Resize Column', () => {
       expect(table).toHaveStyle({ width: '210px' });
       await waitFor(() => expect(onColumnResized).toHaveBeenCalledTimes(1));
 
-      expect(onColumnResized).lastCalledWith(
+      expect(onColumnResized).toHaveBeenLastCalledWith(
         [
           {
             field: 'notes',
