@@ -1,10 +1,11 @@
 import React from 'react';
 import { Checkbox } from '@mui/material';
 
-function BooleanFilter({ forwardedRef, columnDef, onFilterChanged }) {
+function BooleanFilter({ forwardedRef, columnDef, onFilterChanged, size }) {
   return (
     <Checkbox
       ref={forwardedRef}
+      size={size}
       slotProps={{
         input: { 'aria-label': `Filter of ${columnDef.title}` }
       }}

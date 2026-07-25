@@ -1,10 +1,11 @@
 import React, { createElement } from 'react';
 
-function Filter({ columnDef, onFilterChanged, forwardedRef }) {
+function Filter({ columnDef, onFilterChanged, forwardedRef, size }) {
   return createElement(columnDef.filterComponent, {
     columnDef,
     onFilterChanged,
-    forwardedRef
+    forwardedRef,
+    size
   });
 }
 

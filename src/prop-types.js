@@ -346,6 +346,7 @@ export const propTypes = {
     ),
     filtering: PropTypes.bool,
     filterCellStyle: PropTypes.object,
+    filterControlSize: PropTypes.oneOf(['small', 'medium']),
     filterRowStyle: PropTypes.object,
     header: PropTypes.bool,
     headerSelectionProps: PropTypes.object,

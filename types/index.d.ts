@@ -246,6 +246,7 @@ export interface Column<RowData extends object> {
     columnDef: Column<RowData>;
     // The columnId can be extracted from columnDef.tableData.id
     onFilterChanged: (columnId: number, value: any) => void;
+    size?: 'small' | 'medium';
   }) => React.ReactNode;
   filterPlaceholder?: string;
   filterCellStyle?: React.CSSProperties;
@@ -404,6 +405,7 @@ export interface Options<RowData extends object> {
   }[];
   filtering?: boolean;
   filterCellStyle?: React.CSSProperties;
+  filterControlSize?: 'small' | 'medium';
   filterRowStyle?: React.CSSProperties;
   fixedColumns?: { left?: number; right?: number };
   groupRowSeparator?: string;

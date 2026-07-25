@@ -27,7 +27,8 @@ function LookupFilter({
   columnDef,
   onFilterChanged,
   localization,
-  forwardedRef
+  forwardedRef,
+  size
 }) {
   const [selectedFilter, setSelectedFilter] = useState(
     columnDef.tableData.filterValue || []
@@ -38,7 +39,7 @@ function LookupFilter({
   }, [columnDef.tableData.filterValue]);
 
   return (
-    <FormControl style={{ width: '100%' }} ref={forwardedRef}>
+    <FormControl size={size} style={{ width: '100%' }} ref={forwardedRef}>
       <InputLabel
         htmlFor={'select-multiple-checkbox' + columnDef.tableData.id}
         style={{ marginTop: -16 }}
@@ -46,6 +47,7 @@ function LookupFilter({
         {getLocalizedFilterPlaceHolder(columnDef, localization)}
       </InputLabel>
       <Select
+        size={size}
         multiple
         value={selectedFilter}
         onClose={() => {
@@ -68,7 +70,10 @@ function LookupFilter({
       >
         {Object.keys(columnDef.lookup).map((key) => (
           <MenuItem key={key} value={key}>
-            <Checkbox checked={selectedFilter.indexOf(key.toString()) > -1} />
+            <Checkbox
+              size={size}
+              checked={selectedFilter.indexOf(key.toString()) > -1}
+            />
             <ListItemText primary={columnDef.lookup[key]} />
           </MenuItem>
         ))}
