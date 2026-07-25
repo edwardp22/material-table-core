@@ -12,7 +12,8 @@ function DateFilter({
   columnDef,
   onFilterChanged,
   localization,
-  forwardedRef
+  forwardedRef,
+  size
 }) {
   const onDateInputChange = (date) =>
     onFilterChanged(columnDef.tableData.id, date);
@@ -21,7 +22,10 @@ function DateFilter({
     value: columnDef.tableData.filterValue || null,
     onChange: onDateInputChange,
     placeholder: getLocalizedFilterPlaceHolder(columnDef, localization),
-    slotProps: { actionBar: { actions: ['clear'] } }
+    slotProps: {
+      actionBar: { actions: ['clear'] },
+      textField: { size }
+    }
   };
   let dateInputElement = null;
   if (columnDef.type === 'date') {

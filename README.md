@@ -114,6 +114,26 @@ export default function UsersTable() {
 
 The upstream [documentation](https://material-table-core.github.io/docs) and [demos](https://material-table-core.github.io/demos/) remain the primary references for the shared API. Fork-specific behavior should be documented in this README or the release notes.
 
+### Filter control size
+
+Use `filterControlSize` to render the controls in the filter row with MUI's
+`small` or `medium` size. The default is `medium`.
+
+```jsx
+<MaterialTable
+  columns={columns}
+  data={data}
+  options={{
+    filtering: true,
+    filterControlSize: 'small'
+  }}
+/>
+```
+
+The configured value applies to the built-in text, lookup, date, time, and
+boolean filters. Custom `filterComponent` implementations receive it through
+their `size` prop.
+
 ## Package outputs
 
 The published package exposes:

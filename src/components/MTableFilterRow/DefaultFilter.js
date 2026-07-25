@@ -8,7 +8,8 @@ function DefaultFilter({
   localization,
   hideFilterIcons,
   onFilterChanged,
-  forwardedRef
+  forwardedRef,
+  size
 }) {
   const _localization = getLocalizationData(localization);
   const FilterIcon = icons.Filter;
@@ -16,6 +17,7 @@ function DefaultFilter({
   return (
     <TextField
       ref={forwardedRef}
+      size={size}
       style={
         columnDef.type === 'numeric'
           ? { float: columnDef.align ?? 'right' }

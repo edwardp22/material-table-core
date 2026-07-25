@@ -14,6 +14,7 @@ export default {
   exportAllData: false,
   exportMenu: [],
   filtering: false,
+  filterControlSize: 'medium',
   groupTitle: false,
   header: true,
   headerSelectionProps: {},

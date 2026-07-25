@@ -26,15 +26,45 @@ export function MTableFilterRow({
     }
     if (columnDef.field || columnDef.customFilterAndSearch) {
       if (columnDef.filterComponent) {
-        return <Filter columnDef={columnDef} {...props} />;
+        return (
+          <Filter
+            columnDef={columnDef}
+            {...props}
+            size={options.filterControlSize}
+          />
+        );
       } else if (columnDef.lookup) {
-        return <LookupFilter columnDef={columnDef} {...props} />;
+        return (
+          <LookupFilter
+            columnDef={columnDef}
+            {...props}
+            size={options.filterControlSize}
+          />
+        );
       } else if (columnDef.type === 'boolean') {
-        return <BooleanFilter columnDef={columnDef} {...props} />;
+        return (
+          <BooleanFilter
+            columnDef={columnDef}
+            {...props}
+            size={options.filterControlSize}
+          />
+        );
       } else if (['date', 'datetime', 'time'].includes(columnDef.type)) {
-        return <DateFilter columnDef={columnDef} {...props} />;
+        return (
+          <DateFilter
+            columnDef={columnDef}
+            {...props}
+            size={options.filterControlSize}
+          />
+        );
       } else {
-        return <DefaultFilter columnDef={columnDef} {...props} />;
+        return (
+          <DefaultFilter
+            columnDef={columnDef}
+            {...props}
+            size={options.filterControlSize}
+          />
+        );
       }
     }
   }
