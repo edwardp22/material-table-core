@@ -14,6 +14,13 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [8.1.0](https://github.com/edwardp22/material-table-core/compare/v8.0.0...v8.1.0) (2026-07-25)
+
+
+### Features
+
+* **CON-0000:** permitir configurar tamano de filtros ([#48](https://github.com/edwardp22/material-table-core/issues/48)) ([94e21c3](https://github.com/edwardp22/material-table-core/commit/94e21c3481a325479632641d2dd2c1dc45ce26e1))
+
 ## [8.0.0](https://github.com/edwardp22/material-table-core/compare/v7.0.4...v8.0.0) (2026-07-18)
 
 
