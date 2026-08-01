@@ -14,6 +14,13 @@
 
 #### 6.4.1 (2024-04-06)
 
+## [8.1.1](https://github.com/edwardp22/material-table-core/compare/v8.1.0...v8.1.1) (2026-08-01)
+
+
+### Miscellaneous
+
+* **deps:** remove Dependabot automation ([#50](https://github.com/edwardp22/material-table-core/issues/50)) ([0de64f9](https://github.com/edwardp22/material-table-core/commit/0de64f94d37a061769bef25c059755a0db9d3210))
+
 ## [8.1.0](https://github.com/edwardp22/material-table-core/compare/v8.0.0...v8.1.0) (2026-07-25)
 
 
